@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no,minimum-scale=1.0">
+    <title>QQ音乐</title>
+    <!--DEV-->
+    <link rel="stylesheet/less" href="/css/index.less">
+    <script type="text/javascript" src="/js/less.min.js"></script>
+    <!--REM-->
+    <script>
+        ~function () {
+            let computed = () => {
+                let winW = document.documentElement.clientWidth;
+                let value = winW < 640 ? winW / 640 * 100 : value;
+                document.documentElement.style.fontSize = value + 'px';
+            };
+            computed();
+            window.addEventListener('resize', computed);
+        }();
+    </script>
+</head>
+<body>
+<section class="container">
+    <img class="bg" src="img/dogPer.jpg" alt="">
+    <div class="bgMark"></div>
+    <!--HEADER-->
+    <header class="headerBox">
+        <img src="img/dogPer.jpg" alt="">
+        <h1>我的梦</h1>
+        <h2>张靓颖</h2>
+        <a href="javascript:;" class="icon-music"></a>
+    </header>
+
+    <!--MAIN-->
+    <main class="mainBox">
+        <div class="wrapper" data-y="0">
+        </div>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="footerBox">
+        <div class="progress">
+            <span class="already"></span>
+            <div class="pro">
+                <div class="run"></div>
+            </div>
+            <span class="duration"></span>
+        </div>
+        <a href="javascript:;" class="down">下载这首音乐</a>
+    </footer>
+    
+    <!--AUDIO-->
+    <audio src="img/my-dream.mp3" preload="none" id="audioBox"></audio>
+</section>
+
+<!--IMPORT SC-->
+<script type="text/javascript" src="/js/zepto.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+</body>
+</html>
