@@ -1,0 +1,348 @@
+@charset "UTF-8";
+/* css reset */
+/**, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}*/
+@import 'font.css';
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  font-family: "Microsoft YaHei";
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+code,
+kbd,
+samp,
+tt {
+  font-size: 100%;
+}
+input,
+button,
+textarea,
+select {
+  *font-size: 100%;
+  border: none;
+}
+body {
+  background: #fff;
+  color: #5e5e5e;
+  font: 14px/2em Microsoft YaHei, SimSun, Arial;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+}
+sup,
+sub {
+  font-size: 100%;
+  vertical-align: baseline;
+}
+:link,
+:visited,
+ins {
+  text-decoration: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+a:link,
+a:visited {
+  color: #5e5e5e;
+}
+a:hover {
+  color: #c9394a;
+}
+a:active {
+  color: #666;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  *zoom: 1;
+}
+.l {
+  float: left;
+}
+.r {
+  float: right;
+}
+.clear {
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+html {
+  font-size: 100px;
+  /*640px: 1rem = 100px*/
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+.container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.container .bg {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+.container .bgMark {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+}
+/*--HEADER--*/
+.headerBox {
+  position: relative;
+  padding: .3rem;
+  height: 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+.headerBox img {
+  position: absolute;
+  left: .3rem;
+  top: .3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.headerBox h1,
+.headerBox h2 {
+  padding-left: 1.5rem;
+  line-height: .6rem;
+  color: #fff;
+  font-size: .36rem;
+  font-weight: normal;
+}
+.headerBox h2 {
+  font-size: .32rem;
+}
+.headerBox a {
+  display: none;
+  position: absolute;
+  right: .3rem;
+  top: 50%;
+  margin-top: -0.3rem;
+  width: .6rem;
+  height: .6rem;
+  text-align: center;
+  line-height: .6rem;
+  z-index: 2;
+}
+.headerBox a.run {
+  -webkit-animation: musicMove 3s linear 0s infinite both;
+  animation: musicMove 3s linear 0s infinite both;
+}
+.headerBox a:before {
+  font-size: .5rem;
+  color: #fff;
+}
+.headerBox a .music-control-btn {
+  font-family: 'iconfont';
+  color: #fff;
+  font-size: .6rem;
+  line-height: .6rem;
+}
+@-webkit-keyframes musicMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes musicMove {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*--MAIN--*/
+.mainBox {
+  position: relative;
+  margin: .4rem .2rem;
+  overflow: hidden;
+}
+.mainBox .wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+.mainBox .wrapper p {
+  line-height: .84rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: .32rem;
+  letter-spacing: .04rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.mainBox .wrapper p.select {
+  color: #31c27c;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+/*--FOOTER--*/
+.footerBox {
+  position: relative;
+  margin: 0 .2rem;
+  height: 2.2rem;
+}
+.footerBox .down {
+  display: block;
+  margin: 0 auto;
+  width: 4.4rem;
+  height: .9rem;
+  line-height: .9rem;
+  text-align: center;
+  color: #fff;
+  font-size: .36rem;
+  border-radius: .45rem;
+  background: url("https://cdn.junxio.site/static/demo/qq_music/img/QQmusic.png") no-repeat #31c27c;
+  background-size: .7rem .7rem;
+  background-position-x: .15rem;
+  background-position-y: 0.1rem;
+}
+.footerBox .down:active {
+  background-color: #1c7148;
+}
+.footerBox .progress {
+  height: .8rem;
+  line-height: .8rem;
+  font-size: 0;
+}
+.footerBox .progress span,
+.footerBox .progress div {
+  display: inline-block;
+  height: 100%;
+}
+.footerBox .progress span {
+  width: .9rem;
+  height: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: .24rem;
+  vertical-align: middle;
+}
+.footerBox .progress .pro {
+  position: relative;
+  width: 4.2rem;
+  height: .04rem;
+  background: rgba(255, 255, 255, 0.5);
+  vertical-align: middle;
+}
+.footerBox .progress .pro .run {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #31c27c;
+  -webkit-transition: all 1s linear 0s;
+  transition: all 1s linear 0s;
+}

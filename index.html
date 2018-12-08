@@ -4,33 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no,minimum-scale=1.0">
-    <title>QQ音乐</title>
-    <!--DEV-->
-    <link rel="stylesheet/less" href="/css/index.less">
-    <script type="text/javascript" src="/js/less.min.js"></script>
+    <title><%= htmlWebpackPlugin.options.title%></title>
     <!--REM-->
-    <script>
-        ~function () {
-            let computed = () => {
-                let winW = document.documentElement.clientWidth;
-                let value = winW < 640 ? winW / 640 * 100 : value;
-                document.documentElement.style.fontSize = value + 'px';
-            };
-            computed();
-            window.addEventListener('resize', computed);
-        }();
-    </script>
+    <script src="<%= htmlWebpackPlugin.files.chunks.winInit.entry%>"></script>
 </head>
 <body>
 <section class="container">
-    <img class="bg" src="img/dogPer.jpg" alt="">
+    <img class="bg" src="http://y.gtimg.cn/music/photo_new/T002R300x300M000002JsU5q10jUBt.jpg" alt="">
     <div class="bgMark"></div>
     <!--HEADER-->
     <header class="headerBox">
-        <img src="img/dogPer.jpg" alt="">
+        <img src="http://y.gtimg.cn/music/photo_new/T002R300x300M000002JsU5q10jUBt.jpg" alt="">
         <h1>我的梦</h1>
         <h2>张靓颖</h2>
-        <a href="javascript:;" class="icon-music"></a>
+        <a href="javascript:;">
+            <span class="music-control-btn">&#xe633;</span>
+        </a>
     </header>
 
     <!--MAIN-->
@@ -52,11 +41,14 @@
     </footer>
     
     <!--AUDIO-->
-    <audio src="img/my-dream.mp3" preload="none" id="audioBox"></audio>
+    <audio 
+        src="https://cdn.junxio.site/static/demo/qq_music/av/my-dream.mp3" 
+        preload
+        id="audioBox">
+    </audio>
 </section>
 
-<!--IMPORT SC-->
-<script type="text/javascript" src="/js/zepto.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+<!--MAIN.js-->
+<script src="<%= htmlWebpackPlugin.files.chunks.index.entry%>"></script>
 </body>
 </html>
